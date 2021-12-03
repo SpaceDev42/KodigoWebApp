@@ -10,7 +10,7 @@ function Header() {
             <Carousel fade>
               <Carousel.Item>
                 <img
-                  className="d-block w-100"
+                  className="d-block w-100 rounded"
                   src={img1}
                   alt="First slide"
                 />

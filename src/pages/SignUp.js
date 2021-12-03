@@ -71,7 +71,7 @@ const SignUp = () => {
   return (
     <React.Fragment>
       <Navbar />
-      <div class="signup-form">
+      <div class="signup-form mt-5">
         <form
           onSubmit={(event) => {
             handleSignup(event);

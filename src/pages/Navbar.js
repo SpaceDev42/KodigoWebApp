@@ -1,23 +1,22 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../Navbar.css";
+import "../style/Navbar.css";
 export default function Sidebar() {
-
   const user = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
 
   const onLogout = () => {
     localStorage.clear();
     navigate("/");
-  }
+  };
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-color sticky-top">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-color fixed-top">
         <div className="container-fluid">
-            <Link className="navbar-brand text-light" to="/home">
-              RestaurantSV
-            </Link>
+          <Link className="navbar-brand text-light" to="/home">
+            <strong>RestaurantSV</strong>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -30,15 +29,12 @@ export default function Sidebar() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            { user? (
+            {user ? (
               <>
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                    <a className="nav-link active text-light" >
-                      <Link
-                        to="/home"
-                        className="nav-link active text-light"
-                      >
+                  <li className="nav-item">
+                    <a className="nav-link active text-light">
+                      <Link to="/home" className="nav-link active text-light">
                         Home
                       </Link>
                     </a>
@@ -55,14 +51,18 @@ export default function Sidebar() {
                   </li>
                   <li className="nav-item">
                     <a className="nav-link">
-                      <Link to="/user" className="nav-link active text-light">
+                      <Link to="/profile" className="nav-link active text-light">
                         Profile
                       </Link>
                     </a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link">
-                      <Link to="/" className="nav-link active text-light" onClick={ onLogout }>
+                      <Link
+                        to="/"
+                        className="nav-link active text-light"
+                        onClick={onLogout}
+                      >
                         Log Out
                       </Link>
                     </a>
@@ -75,7 +75,10 @@ export default function Sidebar() {
                     placeholder="Search"
                     aria-label="Search"
                   />
-                  <button className="btn btn-outline-light btn-sm" type="submit">
+                  <button
+                    className="btn btn-outline-light btn-sm"
+                    type="submit"
+                  >
                     Search
                   </button>
                 </form>
@@ -86,7 +89,7 @@ export default function Sidebar() {
                   <li className="nav-item">
                     <a className="nav-link active" aria-current="page">
                       <Link className="nav-link active text-light" to="/">
-                        Log In 
+                        Log In
                       </Link>
                     </a>
                   </li>
